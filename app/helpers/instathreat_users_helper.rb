@@ -1,0 +1,2 @@
+module InstathreatUsersHelper
+end

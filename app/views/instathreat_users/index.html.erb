@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Instathreat Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Why owed money</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instathreat_users.each do |instathreat_user| %>
+      <tr>
+        <td><%= instathreat_user.email %></td>
+        <td><%= instathreat_user.phone_number %></td>
+        <td><%= instathreat_user.why_owed_money %></td>
+        <td><%= link_to 'Show', instathreat_user %></td>
+        <td><%= link_to 'Edit', edit_instathreat_user_path(instathreat_user) %></td>
+        <td><%= link_to 'Destroy', instathreat_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instathreat user', new_instathreat_user_path %>

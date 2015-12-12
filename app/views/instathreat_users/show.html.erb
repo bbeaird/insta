@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @instathreat_user.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @instathreat_user.phone_number %>
+</p>
+
+<p>
+  <strong>Why owed money:</strong>
+  <%= @instathreat_user.why_owed_money %>
+</p>
+
+<%= link_to 'Edit', edit_instathreat_user_path(@instathreat_user) %> |
+<%= link_to 'Back', instathreat_users_path %>

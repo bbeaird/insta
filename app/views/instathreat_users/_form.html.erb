@@ -1,0 +1,29 @@
+<%= form_for(@instathreat_user) do |f| %>
+  <% if @instathreat_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instathreat_user.errors.count, "error") %> prohibited this instathreat_user from being saved:</h2>
+
+      <ul>
+      <% @instathreat_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :why_owed_money %><br>
+    <%= f.text_field :why_owed_money %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
