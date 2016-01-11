@@ -22,14 +22,6 @@ var handler = StripeCheckout.configure({
     // Use the token to create the charge with a server-side script.
     // You can access the token ID with `token.id`
     // fbq('track', 'Purchase', {value: '49.00', currency: 'USD'});
-    var name = $('input')[1].value
-    var email = $('input')[2].value;
-    var phoneNumber = $('input')[3].value;
-    analytics.identify(email, {
-      name: name,
-      email: email,
-      phoneNumber: phoneNumber
-    })
     analytics.track('Completed Order');
     console.log('Completed Order');
     console.log('Stripe completion callback!');
@@ -38,6 +30,14 @@ var handler = StripeCheckout.configure({
 
 var form = document.getElementsByTagName('form')[0]
 window.instapageFormSubmitSuccess = function(form){
+  var name = $('input')[1].value
+  var email = $('input')[2].value;
+  var phoneNumber = $('input')[3].value;
+  analytics.identify(email, {
+    name: name,
+    email: email,
+    phoneNumber: phoneNumber
+  })
   analytics.track('Form Submitted');
   console.log('Form Submitted');
   handler.open({
